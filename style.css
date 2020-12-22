@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* ############### container da section ############### */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+/* ############### container da imagem ############### */
+section .imgBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+/* ############### antes da imagem de fundo ############### */
+section .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #e91e63, #03a9f4);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+
+/* ############### imagem de fundo ############### */
+section .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+/* corta as laterais da imagem, preservando a proporção */
+    object-fit: cover;
+/* ---------------- */
+}
+
+/* ############### container do formulario ############### */
+section .contentBx {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ############### container interno do formulario ############### */
+section .contentBx .formBx {
+    width: 50%;
+}
+
+section .contentBx .formBx h2 {
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+/* ---- faz com que fique tudo dentro de h2 e não saia pra fora  ---- */
+    display: inline-block;
+/* -------------------- */
+/* ----------  da espaçamento entre as letra ---------- */
+    letter-spacing: 1px;
+/* ------------------- */
+}
+
+/* ###############  espaçamento entre os input ############### */
+section .contentBx .formBx .inputBx {
+    margin-bottom: 20px;
+}
+
+
+section .contentBx .formBx .inputBx span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ###############  estilo do input ############### */
+section .contentBx .formBx .inputBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+}
+
+/* ###############  estilo do input submit ############### */
+section .contentBx .formBx .inputBx input[type="submit"] {
+    background: #ff4584;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+     background: #ff1765;
+}
+
+
+/* ###############  social midia ############### */
+section .contentBx .formBx .sci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentBx .formBx h3 {
+    color: #607d8b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentBx .formBx .size-social {
+    width: 50px;
+    height: 50px;
+}
+
+section .contentBx .formBx .sci li {
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentBx .formBx .sci li:hover {
+    transform: rotate(360deg) scale(1.3);
+    transition: .3s;
+}
+
+/* ###############  resposivo 1 ############### */
+@media (max-width: 884px) {
+    section .imgBx {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: .5s;
+    }
+    
+    section .contentBx {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    section .contentBx .formBx {
+        width: 65%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.92);
+        margin: 50px;
+        border-radius: 10px;
+    }
+
+    section .contentBx .formBx h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* ###############  resposivo 2 ############### */
+
+@media (max-width: 500px) {
+    section .contentBx .formBx {
+        width: 95%;
+        padding: 30px;
+        margin: 30px;
+        transition: .5s;
+    }
+}
+
+/* ###############  resposivo 3 ############### */
+
+@media (max-width: 341px) {
+    section .contentBx .formBx {
+        width: 95%;
+        padding: 20px;
+        margin: 5px;
+        transition: .5s;
+    }
+}
